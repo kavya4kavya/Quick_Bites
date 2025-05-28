@@ -1,4 +1,6 @@
+
 -- database.sql - MySQL Database Schema
+--BACKEND--
 
 CREATE DATABASE IF NOT EXISTS quickbite_db;
 USE quickbite_db;
@@ -74,3 +76,5 @@ CREATE INDEX idx_orders_status ON orders(status);
 CREATE INDEX idx_order_items_order_id ON order_items(order_id);
 CREATE INDEX idx_students_email ON students(email);
 CREATE INDEX idx_students_student_id ON students(student_id);
+
+

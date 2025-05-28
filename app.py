@@ -1,4 +1,5 @@
 # app.py - Main Flask Application
+
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -13,6 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Database Models
+
 class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     student_id = db.Column(db.String(20), unique=True, nullable=False)
@@ -53,6 +55,7 @@ class OrderItem(db.Model):
     price = db.Column(db.Decimal(10, 2), nullable=False)
 
 # Routes
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -292,4 +295,7 @@ def create_tables():
         db.session.commit()
 
 if __name__ == '__main__':
+
     app.run(debug=True)
+
+
