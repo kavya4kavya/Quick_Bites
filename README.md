@@ -10,6 +10,7 @@ My Food Journey! 📜 Keep track of all your past and current orders in one plac
 Live Order Updates! ⏰ Get real-time status updates on your order so you know exactly when to expect your grub.
 Oops! Need to Cancel? ↩️ Life happens! You can cancel orders (with a friendly limit of 2 cancellations to keep things fair).
 Your QuickBite Profile! 👤 See your personal details and cool stats about your ordering habits.
+
 🛠️ Tech Goodies Under the Hood 🛠️
 Flask: Our speedy Python web framework. 🐍
 MySQL: Where all your delicious order data lives! 💾
@@ -48,7 +49,7 @@ Python
 MYSQL_CONFIG = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'kavya', # <-- **IMPORTANT: Change 'kavya' to your actual MySQL password!**
+    'password': 'your_Password', 
     'database': 'quickbite_db',
     'autocommit': True
 }
