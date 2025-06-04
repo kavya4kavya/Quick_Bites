@@ -282,7 +282,7 @@ def add_to_cart():
 @app.route('/checkout', methods=['POST'])
 def checkout():
     if 'student_id' not in session or 'cart' not in session:
-        return redirect(url_for('checkout'))
+        return redirect(url_for('login'))
     
     cart = session['cart']
     if not cart:
@@ -460,10 +460,10 @@ def api_order_status(order_id):
         'created_at': order['created_at'].isoformat()
     })
 
-"""# Initialize database
+# Initialize database
 @app.before_first_request
 def initialize_database():
-    create_tables()"""
+    create_tables()
 
 if __name__ == '__main__':
     # Create tables on startup

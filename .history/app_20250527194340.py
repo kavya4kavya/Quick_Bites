@@ -282,7 +282,7 @@ def add_to_cart():
 @app.route('/checkout', methods=['POST'])
 def checkout():
     if 'student_id' not in session or 'cart' not in session:
-        return redirect(url_for('checkout'))
+        return redirect(url_for('login'))
     
     cart = session['cart']
     if not cart:

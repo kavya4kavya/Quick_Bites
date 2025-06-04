@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}QuickBite - Student Food Ordering{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <li><a href="{{ url_for('profile') }}">Profile</a></li>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
@@ -20,19 +19,18 @@
             <div class="nav-content">
                 <a href="{{ url_for('home') }}" class="logo">QuickBite</a>
                 <ul class="nav-links">
-  <li><a href="{{ url_for('home') }}">Home</a></li>
-  {% if session.student_id %}
-    <li><a href="{{ url_for('menu') }}">Menu</a></li>
-    <li><a href="{{ url_for('orders') }}">My Orders</a></li>
-    <li><a href="{{ url_for('profile') }}">Profile</a></li>
-    <li><a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a></li>
-    <li class="user-info">Hello, {{ session.student_name }}!</li>
-  {% else %}
-    <li><a href="{{ url_for('login') }}" class="btn btn-primary">Login</a></li>
-    <li><a href="{{ url_for('register') }}" class="btn btn-secondary">Register</a></li>
-  {% endif %}
-</ul>
-
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    {% if session.user_id %}
+                        <li><a href="{{ url_for('menu') }}">Menu</a></li>
+                        <li><a href="{{ url_for('my_orders') }}">My Orders</a></li>
+                        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a></li>
+                        <li class="user-info">Hello, {{ session.user_name }}!</li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}" class="btn btn-primary">Login</a></li>
+                        <li><a href="{{ url_for('register') }}" class="btn btn-secondary">Register</a></li>
+                    {% endif %}
+                </ul>
                 <div class="mobile-menu-toggle">
                     <span></span>
                     <span></span>
