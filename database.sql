@@ -1,9 +1,13 @@
 -- database.sql - MySQL Database Schema
 
+-- Create the database if it doesn't already exist
 CREATE DATABASE IF NOT EXISTS quickbite_db;
+-- Use the newly created or existing quickbite_db database
 USE quickbite_db;
 
 -- Students table
+-- Create the 'students' table to store student information
+
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -16,6 +20,8 @@ CREATE TABLE students (
 );
 
 -- Menu items table
+-- Create the 'menu_items' table to store information about food and beverage items
+
 CREATE TABLE menu_items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -29,6 +35,8 @@ CREATE TABLE menu_items (
 );
 
 -- Orders table
+-- Create the 'orders' table to store details about student orders
+
 CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT NOT NULL,
@@ -42,6 +50,8 @@ CREATE TABLE orders (
 );
 
 -- Order items table
+-- Create the 'order_items' table to store individual items within an order
+
 CREATE TABLE order_items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
@@ -54,6 +64,7 @@ CREATE TABLE order_items (
 );
 
 -- Insert sample menu items
+-- Insert predefined data into the 'menu_items' table
 INSERT INTO menu_items (name, description, price, category, image_url) VALUES
 ('Classic Burger', 'Juicy beef patty with fresh lettuce, tomato, and special sauce', 8.99, 'Main Course', '/static/images/burger.jpg'),
 ('Margherita Pizza', 'Fresh mozzarella, basil, and tomato sauce on crispy crust', 12.99, 'Main Course', '/static/images/pizza.jpg'),
@@ -64,7 +75,8 @@ INSERT INTO menu_items (name, description, price, category, image_url) VALUES
 ('Fish Tacos', 'Fresh fish with cabbage slaw in corn tortillas', 9.99, 'Main Course', '/static/images/tacos.jpg'),
 ('Veggie Burger', 'Plant-based patty with all the classic fixings', 8.49, 'Main Course', '/static/images/veggie_burger.jpg');
 
--- Insert sample student (password is 'password123' hashed)
+-- Insert sample student (password is 'password123' hashed
+
 INSERT INTO students (name, student_id, email, password) VALUES
 ('John Doe', 'STU123456', 'john.doe@university.edu', 'scrypt:32768:8:1$XYZ...');
 
